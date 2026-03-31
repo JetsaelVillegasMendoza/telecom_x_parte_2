@@ -1,4 +1,4 @@
-# 🤖 Telecom X — Customer Churn Prediction
+# 🤖 Telecom X Part 2 — Customer Churn Prediction
 
 [![Proyecto](https://i.postimg.cc/Jhw2KRyc/una-imagen-estilo-publicitario-para-la-compa-a.jpg)](https://postimg.cc/w1V2j8Q7)
 ![Status](https://img.shields.io/badge/status-completed-green)
