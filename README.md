@@ -1,92 +1,132 @@
-# 🤖 Telecom X - Modelo Predictivo de Cancelación
+# 🤖 Telecom X — Customer Churn Prediction
 
-[![una-imagen-estilo-publicitario-para-la-compa-a.jpg](https://i.postimg.cc/Jhw2KRyc/una-imagen-estilo-publicitario-para-la-compa-a.jpg)](https://postimg.cc/w1V2j8Q7)
-![Static Badge](https://img.shields.io/badge/status-completed-green)
+[![Proyecto](https://i.postimg.cc/Jhw2KRyc/una-imagen-estilo-publicitario-para-la-compa-a.jpg)](https://postimg.cc/w1V2j8Q7)
+![Status](https://img.shields.io/badge/status-completed-green)
 
----
-## 📑 Índice
-- [🧾 Descripción del proyecto](#-descripción-del-proyecto)
-- [🔧 Funcionalidades del análisis](#-funcionalidades-del-análisis)
-- [📊 Resultados y hallazgos](#-resultados-y-hallazgos)
-- [📂 Acceso al proyecto](#-acceso-al-proyecto)
-- [🛠️ Abre y ejecuta el proyecto](#️-abre-y-ejecuta-el-proyecto)
-- [🧰 Tecnologías utilizadas](#-tecnologías-utilizadas)
-- [👨‍💻 Autor](#-autor)
-- [🪪 Licencia](#-licencia)
+## 📑 Table of Contents
+- [🚀 Project Overview](#-project-overview)
+- [🎯 Business Problem](#-business-problem)
+- [🧠 Approach](#-approach)
+- [📊 Key Results](#-key-results)
+- [💡 Business Impact](#-business-impact)
+- [📂 Repository Contents](#-repository-contents)
+- [⚙️ How to Run](#️-how-to-run)
+- [🧰 Tech Stack](#-tech-stack)
+- [👤 Author](#-author)
+- [🏁 Final Note](#-final-note)
 
----
+## 🚀 Project Overview
+Developed a **Machine Learning model to predict customer churn** in a telecom company, identifying high-risk users and key drivers of cancellation.
 
-## 🧾 Descripción del proyecto
-Este proyecto corresponde a la **Parte 2** del desafío **Telecom X** dentro del curso **Estadística y Machine Learning** de la formación ONE (Oracle Next Education) en conjunto con Alura LATAM.  
-
-En esta fase se avanzó hacia la construcción de **modelos predictivos de cancelación de clientes (churn)**, buscando identificar los factores más determinantes en la pérdida de usuarios y comparar el desempeño de diferentes algoritmos de Machine Learning.
-
-El dataset procesado en la *Parte 1* sirvió como base para la creación de modelos, su evaluación y la interpretación de resultados, lo que permitió generar estrategias de retención basadas en evidencia.
+The project focuses on combining **predictive modeling + business insights** to support data-driven retention strategies.
 
 ---
 
-## 🔧 Funcionalidades del análisis
-- `División en entrenamiento y prueba`: Separamos los datos en proporción 70/30 asegurando el balance de clases.
-- `Modelos predictivos`: Entrenamiento y evaluación de **Decision Tree** y **Random Forest**, con ajuste de hiperparámetros.
-- `Optimización con GridSearchCV`: Búsqueda de los parámetros más eficientes para maximizar el rendimiento de los modelos.
-- `Evaluación con métricas clave`: Exactitud, Precisión, Recall, F1-score y Matriz de Confusión.
-- `Comparativa visual`: Gráfico comparativo de métricas entre modelos para facilitar la interpretación.
-- `Importancia de variables`: Identificación de los factores más relevantes que explican la cancelación.
-- `Recomendaciones prácticas`: Estrategias de retención basadas en los resultados obtenidos.
+## 🎯 Business Problem
+Customer churn represents a critical loss of revenue.  
+
+The goal of this project is to:
+- Predict which customers are likely to cancel the service  
+- Identify the variables that influence churn  
+- Provide actionable insights to improve customer retention  
 
 ---
 
-## 📊 Resultados y hallazgos
-- **Random Forest optimizado** alcanzó la mejor exactitud global (≈79.4%) y un mejor equilibrio entre métricas que el Decision Tree.  
-- **Factores clave en la cancelación**:  
-  - **Meses contratados** y **facturación total** fueron las variables más determinantes en Random Forest.  
-  - **Tipo de contrato mensual** y el uso de **fibra óptica** destacaron fuertemente en Decision Tree.  
-- **Patrón identificado**: Los clientes con contratos mensuales y altos niveles de facturación tienen mayor propensión a cancelar, lo que indica la necesidad de reforzar programas de fidelización en este segmento.
+## 🧠 Approach
+The project followed a structured data science workflow:
 
-📊 Se generaron gráficos de comparación de métricas y de importancia de variables para apoyar la interpretación.
-
----
-
-## 📂 Acceso al proyecto
-Puedes acceder al código fuente y a los archivos generados directamente en este repositorio. 
-
-Las estapas y los pasos a seguir para esta segunda parte se describen en este [tablero](https://trello.com/b/y1FQQnc7/telecomxparte2latam).
-
-💡 *El desarrollo fue realizado en Google Colab y Jupyter Notebook, con visualizaciones en Matplotlib y Seaborn.*
-
----
-
-## 🛠️ Abre y ejecuta el proyecto
-1. Clona el repositorio:
-```bash
-git clone https://github.com/tu-usuario/telecom-x-parte2.git
-```
-2. Accede a la carpeta:
-```bash
-cd telecom-x-parte2
-```
-3. Instala las dependencias (requiere Python 3 y pip):
-```bash
-pip install pandas matplotlib seaborn scikit-learn
-```
-4. Abre el proyecto en Google Colab o Jupyter Notebook.
+- **Data preparation** using a cleaned dataset from a previous ETL phase  
+- **Train-test split (70/30)** ensuring class balance  
+- **Model training and comparison**:
+  - Decision Tree  
+  - Random Forest  
+- **Hyperparameter tuning** with `GridSearchCV`  
+- **Model evaluation** using:
+  - Accuracy  
+  - Precision  
+  - Recall  
+  - F1-score  
+  - Confusion Matrix  
+- **Feature importance analysis** to interpret model decisions  
 
 ---
 
-## 🧰 Tecnologías utilizadas
-- Python 3
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Google Colab
+## 📊 Key Results
+- The **optimized Random Forest model** achieved the best performance (~79.4% accuracy), outperforming Decision Tree in overall balance.  
+
+- **Top churn drivers identified**:
+  - Contract duration (tenure)
+  - Total charges  
+  - Monthly contract type  
+  - Fiber optic service  
+
+- **Key insight**:  
+  Customers with **monthly contracts and specific billing patterns** show a higher probability of churn.
 
 ---
 
-## 👤 Autor
-[<img src="https://avatars.githubusercontent.com/u/157757330?v=4" width=115><br><sub>Jetsael Villegas</sub>](https://github.com/JetsaelVillegasMendoza)
+## 💡 Business Impact
+This model enables:
+- Early identification of high-risk customers  
+- Targeted retention strategies  
+- Better allocation of marketing and customer success efforts  
 
 ---
 
-## 📝 Licencia
-Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.
+## 📂 Repository Contents
+- Data preprocessing (from Part 1)  
+- Model training and evaluation  
+- Performance comparison  
+- Visualizations and insights  
+
+Additional project workflow:  
+👉 https://trello.com/b/y1FQQnc7/telecomxparte2latam  
+
+---
+
+## ⚙️ How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/JetsaelVillegasMendoza/telecom_x_parte_2.git
+   ```
+
+2. Navigate to the project folder:
+   ```bash
+   cd telecom_x_parte_2
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install pandas matplotlib seaborn scikit-learn
+   ```
+
+4. Run the notebook using:
+   - Jupyter Notebook
+   - Google Colab
+
+---
+
+## 🧰 Tech Stack
+
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- Matplotlib, Seaborn  
+- Jupyter Notebook / Google Colab  
+- Git & GitHub
+
+---
+
+## 👤 Author
+
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/157757330?v=4" width="115"><br>
+  <sub><b>Jetsael Villegas</b></sub>
+</p>
+
+---
+
+## 🏁 Final Note
+
+This project was developed as part of the **Oracle Next Education (ONE)** program, in collaboration with **Alura LATAM**, applying core concepts of **Machine Learning**, **model evaluation**, and **data-driven decision-making**.
