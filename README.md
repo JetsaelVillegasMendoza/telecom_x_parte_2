@@ -96,14 +96,14 @@ Additional project workflow:
    cd telecom_x_parte_2
    ```
 
-3. Install dependencies:
+3. Run the notebook using:
+   - Jupyter Notebook
+   - Google Colab
+
+4. Install dependencies:
    ```bash
    pip install pandas matplotlib seaborn scikit-learn
    ```
-
-4. Run the notebook using:
-   - Jupyter Notebook
-   - Google Colab
 
 ---
 
